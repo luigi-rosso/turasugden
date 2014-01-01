@@ -2,13 +2,18 @@ function turasGallery()
 {
 	function setupGallery()
 	{
-		console.log("SETTING IT UP!");
 		var elements = document.getElementsByClassName("image-list");
-		if(!elements.length)
+		var galleryElements = document.getElementsByClassName("project gallery-project");
+		if(!elements.length || !galleryElements.length)
 		{
 			return;
 		}
 
+		
+		var div = document.createElement("div");
+		div.setAttribute("id", "testingT");
+		galleryElements[0].appendChild(div);
+		
 		var element = elements[0];
 		element.style.display = "block";
 	}
@@ -31,7 +36,6 @@ function turasGallery()
 	{
 		if(!hasGallery())
 		{
-			console.log("TRYING AGAIN…");
 			setTimeout(checkReady, 100);
 		}
 		else
